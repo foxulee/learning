@@ -10,8 +10,16 @@ namespace test
     {
         static void Main(string[] args)
         {
+                   
+           #region test
             Console.WriteLine("Hello World, this is my first time to use GitHub!");
             Console.ReadKey();
+
+            int n = 1;
+            Console.WriteLine(n);
+            #endregion
+            
+            
         }
     }
 }

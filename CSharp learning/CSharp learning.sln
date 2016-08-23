@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{581C5C5A-31FA-46A4-87AB-DB3531AE8455}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables and expressions", "Variables\Variables and expressions.csproj", "{D7085169-6265-4533-B5C5-D2249369AC7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow control", "Flow control\Flow control.csproj", "{42FAF77B-19E2-4B43-98B3-0C677EAAB289}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{581C5C5A-31FA-46A4-87AB-DB3531AE8455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581C5C5A-31FA-46A4-87AB-DB3531AE8455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581C5C5A-31FA-46A4-87AB-DB3531AE8455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7085169-6265-4533-B5C5-D2249369AC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7085169-6265-4533-B5C5-D2249369AC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7085169-6265-4533-B5C5-D2249369AC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7085169-6265-4533-B5C5-D2249369AC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
