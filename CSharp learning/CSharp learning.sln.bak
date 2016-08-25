@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables and expressions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow control", "Flow control\Flow control.csproj", "{42FAF77B-19E2-4B43-98B3-0C677EAAB289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Const Enumeration Structure and Array", "Const Enumeration Structure and Array\Const Enumeration Structure and Array.csproj", "{2715A07E-5E1A-49DF-B168-0B2C306BB665}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "const enumeration structure array", "const, enumeration, structure, array\const enumeration structure array.csproj", "{68CF0B44-4071-459E-8C4E-6ADE72999CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42FAF77B-19E2-4B43-98B3-0C677EAAB289}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68CF0B44-4071-459E-8C4E-6ADE72999CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68CF0B44-4071-459E-8C4E-6ADE72999CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68CF0B44-4071-459E-8C4E-6ADE72999CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68CF0B44-4071-459E-8C4E-6ADE72999CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

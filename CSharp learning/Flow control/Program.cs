@@ -175,6 +175,7 @@ namespace Flow_control
 
             #endregion
 
+
             #region if-else if与switch的比较
 
             //相同点: 都可以实现多分支结构
@@ -259,7 +260,7 @@ namespace Flow_control
 
             #region while statement
             /* while语法
-            while (循环条件)
+            while (循环条件)                   //注意整个结构没有“；”
             {
                 循环体;
             }
@@ -366,7 +367,7 @@ namespace Flow_control
             /* 语法：
             do
             { 循环体；｝
-            while (条件) ;
+            while (条件) ;                    //*******注意整个结构最后有“；”,这点和和while语句不同！
             */
 
             //练习1：练习1：计算1到100之间整数的和；
@@ -548,18 +549,30 @@ namespace Flow_control
 
 
             //习题3：输出九九乘法表(循环的嵌套)
+            //三角形排列
             //for (int i = 1; i <= 9; i++)
             //{
             //    for (int j = i; j >= 1; j--)
             //    {
-            //        Console.Write("{0}*{1}={2}   ", (i-j+1), i, i * (i - j + 1));
+            //        Console.Write("{0}*{1}={2:00}   ", (i - j + 1), i, i * (i - j + 1));              //*******占位符{2:00}中的：00表示占两位，如果只有一位，则用0补齐，如果超过两位则不受限制!!!
 
             //    }
             //    Console.Write("\n");       //换行
             //}
-
-
             //Console.ReadKey();
+
+
+            ////矩形排列
+            //for (int i = 1; i <= 9; i++)
+            //{
+            //    for (int j = 1; j <= 9; j++)
+            //    {
+            //        Console.Write("{0}*{1}={2:00} ", i, j, i * j);                                    //*******占位符{2:00}中的：00表示占两位，如果只有一位，则用0补齐，如果超过两位则不受限制!!!
+            //    }
+            //    Console.Write("\n");
+            //}
+            //Console.ReadKey();
+
 
 
             //习题4：用户输入一个值，输出加法表,乘法表。
@@ -589,6 +602,7 @@ namespace Flow_control
 
 
             #region continue和break
+            //break经常和if语句配合使用。
 
             //习题1：循环录入5个人的年龄并计算平均年龄,如果录入的数据出现负数或大于100的数,立即停止输入并报错.
             //int sum = 0;
@@ -661,9 +675,108 @@ namespace Flow_control
 
 
 
+            //习题4：用for/while continue实现计算1到100(含)之间的除了能被7整除之外所有整数的和。
+            //int sum = 0;
+            //for (int i = 1; i <= 100; i++)
+            //{
+            //    if (i % 7 == 0)
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        sum += i;
+            //    }
+            //}
+            //Console.WriteLine(sum);
+            //Console.ReadKey();
+
+
+            //int sum = 0;
+            //int i = 1;
+            //while (i <= 100)
+            //{
+            //    if (i % 7 == 0)
+            //    {
+            //        i++;
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        sum += i++;
+
+            //    }
+
+            //}
+            //Console.WriteLine(sum);
+            //Console.ReadKey();
+
             #endregion
 
 
+            #region try...catch
+            //利用try...catch和while循环实现“限制用户只能输入数字,并且数字的值必须在0到100之间！”
+            //int age = 0;                                                     //注意循环中用到的变量尽量在循环外面定义！
+            //bool isNumber = false;
+            //bool isBetweenZeroAndHundred=false;
+            //while (isNumber==false || isBetweenZeroAndHundred==false)                                          //跳出while循环除了用break，还是如本题一样用一个bool类型的flag变量！
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("************************************************************************");
+            //        Console.WriteLine("Please enter your age: ");
+            //        age = Convert.ToInt32(Console.ReadLine());
+            //        Console.WriteLine("The age you entered is: " + age);
+            //        isNumber = true;                                         //!!!!!!!!!!!!!!!!!!!!!
+            //        if (age >= 0 && age <= 100)
+            //        {
+            //            Console.WriteLine("The age is between 0 and 100!");
+            //            isBetweenZeroAndHundred = true;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("The age is out of range! The age must be between 0 and 100. \nPlease enter again! Press any key to continue...");
+            //            Console.ReadKey();
+            //            isBetweenZeroAndHundred = false;
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        Console.WriteLine("The age should be a number!\nPlease enter again! Press any key to continue...");
+            //        Console.ReadKey();
+            //        isNumber = false;                                        //!!!!!!!!!!!!!!!!!!!!!
+            //    }
+            //}
+            //Console.ReadKey();
+
+
+
+            #endregion
+
+
+            #region The Ternary Operator 三元表达式
+            //可以简洁地取代if...else
+            //语法：(expression1)?expression2 : expression3
+            //例：
+            //Console.WriteLine("Please enter a number");
+            //int num = Convert.ToInt32(Console.ReadLine());
+            //string resultString= ( num > 10 )?  "Greater than 10." : "Less or equal to 10!";
+            //Console.WriteLine(resultString);
+            //Console.ReadKey();
+
+
+
+
+            #endregion
+
+
+            #region goto
+            //goto太灵活，不建议使用，不利于程序阅读！
+            //如果有时候要从套嵌循环的最里层break跳出循环，goto容易实现。但是建议用bool=false/true结合if的方式来取代goto。
+            //任何时候都不要使用goto。
+
+
+            #endregion
         }
     }
 }
