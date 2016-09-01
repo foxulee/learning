@@ -11,6 +11,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow control", "Flow contro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Const Enumeration Structure and Array", "Const Enumeration Structure and Array\Const Enumeration Structure and Array.csproj", "{2715A07E-5E1A-49DF-B168-0B2C306BB665}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "method", "method\method.csproj", "{435FED65-E632-4B70-99BB-DA2940BCA31D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "class and object", "class and object\class and object.csproj", "{B3F7F861-C3A3-4B96-AA1E-2A6EF1071D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "namespace", "namespace\namespace.csproj", "{E319DAB5-8D94-4077-A220-EC842160C531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string manipulation", "string manipulation\string manipulation.csproj", "{571502A3-612F-45EA-9712-36F8E50D19D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise---Aeroplane Chess", "Excise---Aeroplane Chess\Exercise---Aeroplane Chess.csproj", "{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +43,26 @@ Global
 		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2715A07E-5E1A-49DF-B168-0B2C306BB665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435FED65-E632-4B70-99BB-DA2940BCA31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435FED65-E632-4B70-99BB-DA2940BCA31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435FED65-E632-4B70-99BB-DA2940BCA31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435FED65-E632-4B70-99BB-DA2940BCA31D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F7F861-C3A3-4B96-AA1E-2A6EF1071D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F7F861-C3A3-4B96-AA1E-2A6EF1071D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F7F861-C3A3-4B96-AA1E-2A6EF1071D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F7F861-C3A3-4B96-AA1E-2A6EF1071D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E319DAB5-8D94-4077-A220-EC842160C531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E319DAB5-8D94-4077-A220-EC842160C531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E319DAB5-8D94-4077-A220-EC842160C531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E319DAB5-8D94-4077-A220-EC842160C531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{571502A3-612F-45EA-9712-36F8E50D19D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571502A3-612F-45EA-9712-36F8E50D19D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571502A3-612F-45EA-9712-36F8E50D19D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{571502A3-612F-45EA-9712-36F8E50D19D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
