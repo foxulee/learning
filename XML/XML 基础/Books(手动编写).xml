@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Books>             <!--根节点，有且只能有一个 -->
+  <Book>
+    <BookName>水浒传</BookName>               
+    <Author>XXX</Author>
+    <Price>100RMB</Price>
+    <Des>好看！经典！</Des>
+  </Book>
+  <Book>
+    <BookName>三国演义</BookName>
+    <Author>XXX</Author>
+    <Price>150RMB</Price>
+    <Des>顶！！</Des>
+  </Book>
+</Books>

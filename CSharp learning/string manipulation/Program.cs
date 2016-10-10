@@ -10,6 +10,25 @@ namespace string_manipulation
     {
         static void Main(string[] args)
         {
+
+            //��� 由于字符串的不可变性，所以，当我们需要给一个字符串进行大量的拼接、赋值等操作的时候，会产生大量的内存垃圾，所以说，这么做是不合算的。
+            //如果你需要对一个字符串进行大量的重复，拼接等操作，我们推荐使用StringBuilder
+            //string strTest = "";
+            //for (int i = 0; i < 1000000; i++)                    //用“+”进行拼接效率奇慢
+            //{
+            //    strTest += i;
+            //}
+
+
+            //StringBuilder sb = new StringBuilder();
+            //for (int i = 0; i < 1000000; i++)                    //这才是最快的办法！！！！
+            //{
+            //    sb.Append(i);
+            //}
+
+
+
+
             //� C#中单个字符用单引号包含就是char类型，（'a'），单引号中放且只能放一个字符。
             //� 单个字符也可以表示为字符串，还可以有长度为0的字符串
             //� 使用s.Length属性来获得字符串中的字符个数 （类似于数组的用法。）
@@ -29,6 +48,9 @@ namespace string_manipulation
             //}
             //Console.ReadKey();
 
+            ///判断字符串是否为空: IsNullOrEmpty()	静态方法,判断为null或者为”” （静态方法）
+            //if (string.IsNullOrEmpty(str))
+            //{ }
 
 
             ////�更改字符串的内容
@@ -69,6 +91,25 @@ namespace string_manipulation
 
             //�string[] Split(new string[] {'separator'}, StringSplitOptions options)将字符串按照指定的string分割符分割为字符串数组。
 
+            //�Join() 连接字符串		静态方法
+            //string str = "hello";
+            //string new = string.Join("|",str,"more",str);
+
+
+            ///���StringBuilder高效的字符串操作
+            //当大量进行字符串操作的时候，比如，很多次的字符串的拼接操作。
+            //String 对象是不可变的。 每次使用 System. String 类中的一个方法时，都要在内存中创建一个新的字符串对象，这就需要为该新对象分配新的空间。 在需要对字符串执行重复修改的情况下，与创建新的 String 对象相关的系统开销可能会非常大。 如果要修改字符串而不创建新的对象，则可以使用 System.Text.StringBuilder 类。 例如，当在一个循环中将许多字符串连接在一起时，使用 StringBuilder 类可以提升性能。 
+            //StringBuilder != String//将StringBuilder转换为String.用ToString();
+            //StringBuilder仅仅是拼接字符串的工具，大多数情况下还需要把StringBuilder转换为String.
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append();//追加字符串
+            //sb.ToString();//把StringBuilder转换为字符串。   //ToString是obj类里面的一个虚方法；一般类里面ToString方法返回的是此类所在的空间名。而StringBuilder类将ToString重写override了，返回字符串。
+            //sb.Insert();
+            //sb.Replace();
+            
+
+
+
 
             //练习：从日期字符串（"2008-08-08"）中分析出年、月、日；2008年08月08日。
             //string date = "2008-08-08";
@@ -81,7 +122,6 @@ namespace string_manipulation
             //string str2 = "李时珍是一个好同志，向李时珍同志学习";
             //string strNew = str2.Replace("李时珍","李素丽");
             //Console.WriteLine(strNew);
-
 
 
             //�插入字符 insert()的用法: < string >.insert(参数1, 参数2) 参数1为插入子字符串的其实位置,参数2为要插入的子字符串
@@ -163,9 +203,9 @@ namespace string_manipulation
             //        {
             //            Console.WriteLine(lineContent[0].Substring(0,17)+"...|"+lineContent[1]);
             //        }
-                    
+
             //    }
-                    
+
             //}
 
 

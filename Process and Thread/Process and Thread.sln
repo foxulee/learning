@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多线程", "ConsoleApplication1\多线程.csproj", "{022803DC-944A-46D0-8BD5-1242417C9835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "单线程的问题", "单线程的问题\单线程的问题.csproj", "{FD2E2218-31CE-4108-B2CD-6FB8BA8FA251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "摇奖机", "摇奖机\摇奖机.csproj", "{B267B090-517D-4862-BE4E-B34C8B10D53E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "练习1--利用OPP打开不同文件", "练习1--利用class打开不同文件\练习1--利用OPP打开不同文件.csproj", "{D214AE46-B0F3-4329-A32B-1613105E97A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{022803DC-944A-46D0-8BD5-1242417C9835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022803DC-944A-46D0-8BD5-1242417C9835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022803DC-944A-46D0-8BD5-1242417C9835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022803DC-944A-46D0-8BD5-1242417C9835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2E2218-31CE-4108-B2CD-6FB8BA8FA251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2E2218-31CE-4108-B2CD-6FB8BA8FA251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2E2218-31CE-4108-B2CD-6FB8BA8FA251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2E2218-31CE-4108-B2CD-6FB8BA8FA251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B267B090-517D-4862-BE4E-B34C8B10D53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B267B090-517D-4862-BE4E-B34C8B10D53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B267B090-517D-4862-BE4E-B34C8B10D53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B267B090-517D-4862-BE4E-B34C8B10D53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D214AE46-B0F3-4329-A32B-1613105E97A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D214AE46-B0F3-4329-A32B-1613105E97A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D214AE46-B0F3-4329-A32B-1613105E97A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D214AE46-B0F3-4329-A32B-1613105E97A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

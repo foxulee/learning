@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string manipulation", "stri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise---Aeroplane Chess", "Excise---Aeroplane Chess\Exercise---Aeroplane Chess.csproj", "{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File System", "File System\File System.csproj", "{864069DD-331C-45B5-94FF-A562CB6C4909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "class and polymorphism", "class and polymorphism\class and polymorphism.csproj", "{98D41166-61E4-4DDB-97DF-428B8D3948F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "正则表达式 Regular expression", "正则表达式 Regular expression\正则表达式 Regular expression.csproj", "{02282B4F-6AA3-460A-8651-A1B333F754B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +69,18 @@ Global
 		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED2E9877-C5F3-4529-A5A7-1A777838A0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864069DD-331C-45B5-94FF-A562CB6C4909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864069DD-331C-45B5-94FF-A562CB6C4909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864069DD-331C-45B5-94FF-A562CB6C4909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864069DD-331C-45B5-94FF-A562CB6C4909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D41166-61E4-4DDB-97DF-428B8D3948F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D41166-61E4-4DDB-97DF-428B8D3948F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D41166-61E4-4DDB-97DF-428B8D3948F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D41166-61E4-4DDB-97DF-428B8D3948F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02282B4F-6AA3-460A-8651-A1B333F754B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02282B4F-6AA3-460A-8651-A1B333F754B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02282B4F-6AA3-460A-8651-A1B333F754B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02282B4F-6AA3-460A-8651-A1B333F754B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

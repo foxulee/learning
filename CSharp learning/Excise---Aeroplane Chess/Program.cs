@@ -107,7 +107,7 @@ namespace Excise___Aeroplane_Chess
                 {
                     break;
                 }
-                Console.ReadKey(true);
+                Console.ReadKey(true);                                        //玩家输入的内容不显示在控制台中。
             }
             #endregion
 

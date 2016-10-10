@@ -9,7 +9,7 @@ namespace Const_Enumeration_Structure_and_Array
 {
     public enum Gender                               //public不是必须，但如果被struct用到，则必须有public
     {
-        Male=1,                                      //=1可以不写，那么Male默认的编号为0     
+        Male = 1,                                      //=1可以不写，那么Male默认的编号为0     
         Female                                       //Female的编号自动为Male的编号加1.
     }
 
@@ -18,7 +18,7 @@ namespace Const_Enumeration_Structure_and_Array
         public string name;
         public Gender sex;
         public int age;
-             
+
 
     }
 
@@ -184,17 +184,17 @@ namespace Const_Enumeration_Structure_and_Array
             arrayList.Add('a');
             //�AddRange方法用于添加一批元素到当前列表的末尾
             String[] strlist = { "test1", "test5", "test9", "test13", "test18", "test24" };
-            arrayList.AddRange(strlist);          //传入参数必须是数组名，不能直接把数组放进去。
+            arrayList.AddRange(strlist);          //传入参数必须是数组名或者，arrayList.AddRange(new int[]{1,2,3,45})
             //�修改数据  
             arrayList[1] = 34;
-            //�Remove方法用于删除一个元素，通过元素本身的引用来删除
+            //�Remove方法用于删除一个元素，通过元素本身的引用来删除（如果没有的，也不会报错。）
             arrayList.Remove("test1");
             //�RemoveAt方法用于删除一个元素，通过索引值来删除  
             arrayList.RemoveAt(0);
             //�Insert用于添加一个元素到指定位置，列表后面的元素依次往后移动  
             arrayList.Insert(0, "qwe");
             //�InsertRange用于从指定位置开始添加一批元素，列表后面的元素依次往后移动
-            arrayList.InsertRange(1,strlist);
+            arrayList.InsertRange(1, strlist);
             //�缩减容量 - ArrayList.TrimToSize（）；将集合的容量减少到实际元素个数的大小.在执行删除操作后，要养成良好的缩减容量的习惯，节省内存空间，提高性能。
             //�Clear方法用于清除现有所有的元素
             //�查找元素-除了按数组的索引查找外，还可以用ArrayList.Contains（value）；按照元素值查找集合，如果包含便返回True，不包含时返回False。
@@ -210,24 +210,50 @@ namespace Const_Enumeration_Structure_and_Array
 
             //���遍历 ArrayList 对象的方法
             //方法1：
-            foreach (object o in arrayList)                      //此处要用object类型i，因为ArrayList是object.
-            {
-                Console.Write(o.ToString() + " ");
-            }
-            Console.ReadKey();
+            //foreach (object o in arrayList)                      //此处要用object类型i，因为ArrayList是object. 里氏转换。
+            //{
+            //    Console.Write(o.ToString() + " ");
+            //}
+            //Console.ReadKey();
 
-            //方法2：
-            for (int i = 0; i < arrayList.Count; i++)
-            {
-                Console.Write(arrayList[i].ToString() + " ");
-            }
-            Console.ReadKey();
+            ////方法2：
+            //for (int i = 0; i < arrayList.Count; i++)
+            //{
+            //    Console.Write(arrayList[i].ToString() + " ");
+            //}
+            //Console.ReadKey();
 
             //ArrayList好像是解决了数组中所有的缺点，为什么又会有List？我们从上面的例子看，在List中，我们不仅插入了字符串cde，而且插入了数字5678。这样在ArrayList中插入不同类型的数据是允许的。因为ArrayList会把所有插入其中的数据当作为object类型来处理，在我们使用ArrayList处理数据时，很可能会报类型不匹配的错误，也就是ArrayList不是类型安全的。在存储或检索值类型时通常发生装箱和取消装箱操作，带来很大的性能耗损。装箱与拆箱的概念：简单的说:装箱：就是将值类型的数据打包到引用类型的实例中比如将string类型的值abc赋给object对象obj。拆箱：就是从引用数据中提取值类型比如将object对象obj的值赋给string类型的变量i。装箱与拆箱的过程是很损耗性能的。
             //更详细的了解：http://www.cnblogs.com/toconnection/archive/2011/04/11/2012645.html
 
 
-            //��������List
+            //练习：写一个长度为10的集合，要求在里面随机存放10个数字(0-9),要求所有的数字不重复。
+            ArrayList intArray = new ArrayList();
+            Random r = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                int rNumber = r.Next(0, 10);
+                while (intArray.Contains(rNumber))
+                {
+                    rNumber = r.Next(0, 10);
+                }
+
+                intArray.Add(rNumber);
+                Console.WriteLine("{0} is added.", rNumber);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(intArray[i]);
+
+            }
+
+            Console.ReadKey();
+
+
+
+
+
+            //��������List (泛型集合)
             //因为ArrayList存在不安全类型与装箱拆箱的缺点，所以出现了泛型的概念。List类是ArrayList类的泛型等效类，它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。
             List<string> list = new List<string>();
             //�新增数据  
@@ -245,21 +271,21 @@ namespace Const_Enumeration_Structure_and_Array
 
             //��������Array,List和ArrayList间的转换:可以用遍历的方法装换，不过这种方法无疑有些笨拙。下面是一些简单点的方法：
             //数组Array转换成ArrayList和List
-            int[] arrayToConvert = { 1, 2, 3, 5 };
-            List<int> newList = new List<int>(arrayToConvert);
-            ArrayList newArrayList = new ArrayList(arrayToConvert);
-            //ArrayList和List转换成数组Array
-            int[] newArray1 =newList.ToArray();               //List转换成Array,方法一
+            //int[] arrayToConvert = { 1, 2, 3, 5 };
+            //List<int> newList = new List<int>(arrayToConvert);
+            //ArrayList newArrayList = new ArrayList(arrayToConvert);
+            ////ArrayList和List转换成数组Array
+            //int[] newArray1 =newList.ToArray();               //List转换成Array,方法一
 
-            int[] newArray2 = new int[newList.Count];         //List转换成Array,方法二
-            newList.CopyTo(newArray2);                        
-            Console.WriteLine("Type of newArray2 is "+newArray2.GetType());
+            //int[] newArray2 = new int[newList.Count];         //List转换成Array,方法二
+            //newList.CopyTo(newArray2);                        
+            //Console.WriteLine("Type of newArray2 is "+newArray2.GetType());
 
-            int[] newArray3 =(int[])newArrayList.ToArray(typeof(Int32));           //ArrayList转换为Array，方法一。此处的int32还可以为string等其他类型
+            //int[] newArray3 =(int[])newArrayList.ToArray(typeof(Int32));           //ArrayList转换为Array，方法一。此处的int32还可以为string等其他类型
 
-            int[] newArray4 = new int[newArrayList.Count];                         //ArrayList转换为Array，方法二
-            newArrayList.CopyTo(newArray4);                        
-            Console.WriteLine("Type of newArray4 is "+newArray4.GetType());       //.GetType().得到值类型
+            //int[] newArray4 = new int[newArrayList.Count];                         //ArrayList转换为Array，方法二
+            //newArrayList.CopyTo(newArray4);                        
+            //Console.WriteLine("Type of newArray4 is "+newArray4.GetType());       //.GetType().得到值类型
 
 
 
@@ -268,46 +294,106 @@ namespace Const_Enumeration_Structure_and_Array
             //在开发过程中.数组和集合的处理一般会用for or foreach 来处理一些操作.这里介绍一些常用的集合跟数组的操作函数.
             //�两个集合的合并
 
-            List<int> listA = new List<int> { 1, 2, 3, 5, 7, 9 };
+            //List<int> listA = new List<int> { 1, 2, 3, 5, 7, 9 };
 
-            List<int> listB = new List<int> { 13, 4, 17, 29, 2 };
+            //List<int> listB = new List<int> { 13, 4, 17, 29, 2 };
 
 
-            listA.AddRange(listB);                                        //把集合A.B合并
-            List<int> listC = listA.Union(listB).ToList<int>();           //.Union()剔除重复项 
-            List<int> listD = listA.Concat(listB).ToList<int>();          //.Concat()保留重复项
-            int q=listA.BinarySearch(1);                                  //判断集合中是否包含某个值.如果包含则返回0
+            //listA.AddRange(listB);                                        //把集合A.B合并
+            //List<int> listC = listA.Union(listB).ToList<int>();           //.Union()剔除重复项 
+            //List<int> listD = listA.Concat(listB).ToList<int>();          //.Concat()保留重复项
+            //int q=listA.BinarySearch(1);                                  //判断集合中是否包含某个值.如果包含则返回0
 
 
 
             //�两个数组的合并
-            int[] arrayA = new int[] { 1, 2 };
-            int[] arrayB = new int[] { 2, 3 };
-           
-            List<int> r = new List<int>();
-            r.AddRange(arrayA);
-            r.AddRange(arrayB);
-            int[] arrayC = r.ToArray();                                 // 合并数组
-            int[] arrayD = arrayA.Union(arrayB).ToArray();              //Union()剔除重复项 
-            int[] arrayE = arrayA.Concat(arrayB).ToArray();             //Concat()保留重复项
-            int n = Array.BinarySearch(arrayA, 3);                      //判断数组中是否包含某个值.如果包含则返回0
+            //int[] arrayA = new int[] { 1, 2 };
+            //int[] arrayB = new int[] { 2, 3 };
 
-            //�集合的取交集
-            List<int> list1 = new List<int> { 1, 2, 3, 5, 9 };
-            List<int> list2 = new List<int> { 4,3,9};
-            bool isIntersected = list1.Intersect(list2).Count() > 0;    //.Intersect( )
+            //List<int> r = new List<int>();
+            //r.AddRange(arrayA);
+            //r.AddRange(arrayB);
+            //int[] arrayC = r.ToArray();                                 // 合并数组
+            //int[] arrayD = arrayA.Union(arrayB).ToArray();              //Union()剔除重复项 
+            //int[] arrayE = arrayA.Concat(arrayB).ToArray();             //Concat()保留重复项
+            //int n = Array.BinarySearch(arrayA, 3);                      //判断数组中是否包含某个值.如果包含则返回0
 
-            //集合的取差集 (list1有，list2沒有)
-            bool isExcepted = list1.Except(list2).Count() > 0;          //.Except( )
+            ////�集合的取交集
+            //List<int> list1 = new List<int> { 1, 2, 3, 5, 9 };
+            //List<int> list2 = new List<int> { 4,3,9};
+            //bool isIntersected = list1.Intersect(list2).Count() > 0;    //.Intersect( )
 
-            //数组的交集和差集
-            int[] array1 = { 1, 2, 3, 5, 9 };
-            int[] array2= { 4, 3, 9 };
-            int[] arrayIntersected = array1.Intersect(array2).ToArray();   //注意两个数组Interesect，Except，Union，Concat完了后是一个集合List，用ToArray()再转化为数组Array。
-            int[] arrayExcepted = array1.Except(array2).ToArray();
+            ////集合的取差集 (list1有，list2沒有)
+            //bool isExcepted = list1.Except(list2).Count() > 0;          //.Except( )
+
+            ////数组的交集和差集
+            //int[] array1 = { 1, 2, 3, 5, 9 };
+            //int[] array2= { 4, 3, 9 };
+            //int[] arrayIntersected = array1.Intersect(array2).ToArray();   //注意两个数组Interesect，Except，Union，Concat完了后是一个集合List，用ToArray()再转化为数组Array。
+            //int[] arrayExcepted = array1.Except(array2).ToArray();
 
 
 
+
+
+            #region Hashtable
+            Hashtable hashT = new Hashtable();                 //using System.Collections;  
+            hashT.Add(1, "张三");                              //可以输入任意键值对,键唯一，值可以相同
+            hashT.Add('c', true);
+            hashT.Add(3.14, 100);                              //添加新数据，新键不能和旧键相同，否则产生异常。
+            hashT['n'] = "new";                              //添加新数据，键是'n',值是"new"，新键可以和旧键相同，直接替换成新值。
+            hashT[1] = "李四";                                 //修改已有键上的值。
+            if (hashT.ContainsKey(1))                           //包含此键。 .ContainsValue()，包含此值。
+            {
+                hashT.Remove(1);                               //删除指定的键值对。
+            }
+            foreach (var item in hashT.Keys)                  //遍历Hashtable只能用foreach，不能用for循环。var推断类型，通过变量的值类推断出这个变量的类型。
+            {
+                Console.WriteLine(hashT[item]);
+            }
+
+            #endregion
+
+            #region Dictionary 泛型键值对集合
+            Dictionary<int, string> dic = new Dictionary<int, string> { };               //只能加入唯一确定的键值对
+            dic.Add(1,"张三");
+            dic.Add(2,"李四");
+            dic.Add(3,"王五");
+            dic[4]="赵六";
+            dic[2]="哈哈";
+            //foreach (var item in dic.Keys)                                               //遍历dictionary 方法1
+            //{
+            //    Console.WriteLine("{0}----{1}", item,dic[item]);
+            //}
+
+            //foreach (KeyValuePair<int, string> item in dic)                               //遍历dictionary 方法2
+            //{
+            //    Console.WriteLine("{0}----{1}",item.Key,item.Value);
+            //}
+            #endregion
+
+
+            //练习：统计Welcome to China中每个字符出现的次数，不考虑大小写。
+            string s = "Welcome to China";
+            List<char> allChar = new List<char> { };
+            allChar = s.ToLower().ToList<char>();
+            List<char> uniqueChar = new List<char> { };
+            foreach (char i in allChar)
+            {
+                if (i != ' ' && allChar.LastIndexOf(i) == allChar.IndexOf(i))
+                {
+                    uniqueChar.Add(i);
+                }
+                //if (allChar.LastIndexOf(i) != allChar.IndexOf(i))
+                //{
+                //    uniqueChar.Add(allChar[allChar.IndexOf(i)]);
+                //}
+            }
+
+            foreach (char i in uniqueChar)
+            {
+                Console.WriteLine(i);
+            }
 
 
             Console.ReadKey();
