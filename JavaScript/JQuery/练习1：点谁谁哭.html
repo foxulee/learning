@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        //加载就绪执行 ready简写形式
+        $(function () {
+            //获取所有按钮，得到jquery对性，为对象注册点击事件
+
+            //隐式迭代：自动将数组中的每个元素都执行一遍 （省略了遍历，简化了代码）
+            //当前：会将数组中的每个input进行click事件绑定
+            $('input').click(function() {
+                if (this.value=='哈哈') {
+                    this.value = '呜呜';    //this是dom对象
+                } else {
+                    this.value = '哈哈';
+                }
+               
+            });
+
+
+        })
+    </script>
+
+</head>
+<body>
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+    <input type="button" value="哈哈" />
+
+</body>
+</html>

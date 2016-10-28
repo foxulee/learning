@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>       <!--添加JQ的引用-->
+    <script type="text/javascript">
+        onload=function() {
+            //$对象是jquery对象的简写方式，一般都使用$而不书写jquery，简便快捷
+            //jquery对象：本质就是dom的一个数组
+            //通过jquery selector拿到的都是jquery对象，然后可以使用jquery提供的方法
+            $('#btnShow');
+
+
+            //操作属性
+            //获取属性的值：只写第一个参数，属性的名字
+            alert($('#btnShow').attr('value'));
+
+            //设置属性的值：写两个参数，第一个表示属性的名字，第二个表示值
+            $('#btnShow').attr('value', 'Hello World');
+
+            //prop表示html的原有属性，attr而表示扩展属性
+            //如：img的src操作使用prop，而href操作使用attr
+            //一般使用attr因为各种情况都适用
+            //$('img').attr('href', 'abc');
+
+            //移除属性
+            //$('#btnShow').removeAttr('value');
+
+        }
+    </script>
+</head>
+<body>
+    用于获取页面上的标签，返回一个jq对象 <br />
+    id选择器：#id  <br />
+    元素选择器：标签  <br />
+    类选择器：.class  <br /><br />
+    <input type="button" id="btnShow" value="Show"/>
+
+
+</body>
+</html>

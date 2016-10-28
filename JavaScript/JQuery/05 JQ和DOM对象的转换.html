@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            //将jquery对象转换成dom对象：通过[下标]的形式返回dom对象
+            //通过jquery的选择器得到的数组，才是jquery对象，才可以调用jquery的成员
+            //将dom对象转换成jquery对象：$(dom对象)
+            $('#btnShow').click(function() {
+                $('p').text('都是P');//隐式迭代
+                $(this).val('abc');
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btnShow" value="都是P" />
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+</body>
+</html>

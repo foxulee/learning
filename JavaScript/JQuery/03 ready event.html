@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        //jquery $(document).ready() 与window.onload的区别
+        //http://www.jb51.net/article/21628.htm
+
+
+        //dom方式：为window的onload事件注册处理函数，表示页面所有元素加载完成后出发执行
+        window.onload = function() {
+
+        };
+
+
+        //jquery方式:表示加载所有标签后就执行func代码
+        //$(document).ready(function(){});
+        //简写：
+        $(function() {
+            $('#btnShow').click(function() {
+                alert(1);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <input type="button" id="btnShow" value="Display"/>
+</body>
+</html>

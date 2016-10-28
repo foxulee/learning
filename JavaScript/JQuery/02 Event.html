@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        
+        //对于value属性的一种简写操作
+        $('#btnShow').val('');
+        $('#btnShow').attr('value');
+
+        //注册按钮点击事件click(func)取代DOM的onclick=func
+        onload= function() {
+            $('#btnShow').click(function () {
+                alert(this.value);       //this是dom对象，不能调用jquery的成员
+            });
+        }
+       
+
+        //比较jquery和dom注册事件
+        //dom的事件注册：一个事件只能注册一个处理函数，不支持多播
+        //document.getElementById('btnShow').onclick=function() {
+        //    alert(1);
+        //}
+        //document.getElementById('btnShow').onclick=function() {
+        //    alert(2);                      //覆盖第一个事件
+        //}
+
+
+        //jquery注册事件：  支持多播，一个事件可以指定多个处理函数
+        $('#btnShow').click(function() {
+            alert(1);
+        });
+        $('#btnShow')
+            .click(function() {
+                alert(2);
+            });
+
+    </script>
+</head>
+<body>
+    事件注册处理程序  <br />
+    方式一： bind(事件类型,处理函数)<br />
+    方式二：事件类型(处理函数)<br />
+    事件类型与dom的相同，去掉on前缀<br />
+    卸载事件处理程序<br />
+    unbind();//移除所有事件处理程序<br />
+    unbind(‘click’);//移除所有的click事件处理程序<br />
+    unbind('click',函数名称);//移除click事件的指定名称的处理函数，这种方法无法移除匿名函数<br />
+    说明：dom事件不支持多播，而jquery事件支持多播<br /><br /><br />
+
+    <input type="button" id="btnShow" value="Display"/>
+
+</body>
+</html>

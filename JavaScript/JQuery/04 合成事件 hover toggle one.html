@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            //合成指向，移开事件 hover
+            $('#btnChange')
+                .hover(function() {   //指向
+                        this.style.color = 'red';
+                    },
+                    function() {     //移开
+                        this.style.color = 'black';
+                    });
+
+            //点击合成事件toggle,指定在n个函数间顺序切换
+            $('#btnChange').toggle(function() {    //第一次点击是执行
+                alert(1);
+            }, function () {        //第二次点击是执行
+                alert(2);
+            }, function () {        //第三次点击是执行
+                alert(3);
+            });
+
+            //合成事件：只将绑定的事件执行一次 one
+            $('#btnChange').one('click',function() {
+                alert(1);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    hover(fn1,fn2):fn1表示mouseover的处理函数，fn2表示mouseout的处理函数;<br />
+
+    toggle(fn1,fn2...fnN):当元素被click后，轮流执行fn1、fn2、fnN方法;<br />
+
+    one(type,fn)：表示注册的事件只响应一次，然后失效，type表示事件类型;<br />
+    <br />
+    <br />
+    <input type="button" id="btnChange" value="Change"/>
+
+</body>
+</html>
