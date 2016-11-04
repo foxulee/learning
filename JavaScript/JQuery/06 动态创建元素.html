@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btnAppend').click(function () {
+                //d动态创建jquery对象
+                var newElement1 = $('<b>I am append new!</b>');
+                //在div中追加
+                $('#divContainer').append(newElement1);
+            });
+
+            $('#btnAppendTo').click(function () {
+                //追加到div中
+                $('<b>I am appendTo new!</b>').appendTo($('#divContainer'));
+
+            });
+
+            $('#btnEmpty').click(function () {
+                //清空所有子元素
+                $('#divContainer').empty();
+            });
+
+            $('#btnRemove').click(function() {
+                $('#divContainer').remove(); 
+
+            });
+        });
+    </script>
+</head>
+<body>
+    创建元素：$('标签字符串') <br />
+    添加元素：<br />
+    append()，appendTo()：追加子元素<br />  
+    prepend()，prependTo()：前加子元素<br />
+    after()，insertAfter()：后加兄弟元素<br />
+    before()，insertBefore()：前加兄弟元素<br />
+    动态删除元素<br />
+    empty()：清空子元素<br />
+    remove(selector)：删除当前元素，无参表示删除全部，有参表示删除符合条件的元素<br /><br /><br />
+
+
+
+    <input type="button" id="btnAppend" value="Append" />
+<input type="button" id="btnAppendTo" value="AppendTo" />
+<input type="button" id="btnEmpty" value="Empty"/>
+    <input type="button" id="btnRemove" value="Remove"/>
+    <div id="divContainer">sdfasdf </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            //空格  所有子元素 忽略层级
+            $('#d1 div');     //div#d11, div#d12, div#d121, div#d122, div#d13
+
+            //> 直接子元素
+            $('#d1>div');   //div#d11, div#d12, div#d13
+
+            //+ 之后的一个同级元素
+            $('#d1+div');   //div#d2     等同于： $('#d1').next();
+            $('#d2+div');   //div#d3
+            $('#d3+div');   //[] 后面没有元素，返回空数组
+
+            //~ 之后的所有同级元素
+            $('#d1~div');  //div#d2, div#d3   等同于： $('#d1').nextAll();
+            $('#d2~div');  //div#d3
+
+
+            //siblings()  同级的其他元素
+            $('#d2').siblings();    //div#d1, div#d3   
+
+            //直接父级元素
+            $('#d11').parent();    //div#d1
+
+            //直接子集元素
+            $('#d1').children();   //div#d11, div#d12, div#d13
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+    符号一：空格，表示取子元素，无论是几层的子元素，都会被选择到 <br />
+    符号二：大于号>，表示直接子元素，不包含后代子元素 <br />
+    符号三：加号+，表示之后紧临的一个同级元素<br />
+    符号三：波浪号~，表示之后的所有同级元素<br />
+
+    next(),prev(),nextAll(),prevAll(),siblings(),parent(),children()<br /><br />
+
+    <div id="d1">
+        <div id="d11"></div>
+        <div id="d12">
+            <div id="d121"></div>
+            <div id="d122"></div>
+        </div>
+        <div id="d13"></div>
+    </div>
+    <div id="d2"></div>
+    <div id="d3">
+        <div id="d31">
+            <div id="d311"></div>
+            <div id="d312"></div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

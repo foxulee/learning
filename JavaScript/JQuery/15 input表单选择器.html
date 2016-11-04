@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                //$(':input').css('background-color','yellow');
+                //$('input').css('background-color', 'yellow');
+                $(':text').css('background-color', 'yellow');
+            });
+        });
+    </script>
+</head>
+<body>
+    $(":input")选取所有input、textarea、select和button元素。和$("input")不一样，$("input")只获得input <br />
+    $(":text")选取所有单行文本框，等价于$("input[type=text]"), <br />
+    $(":password")选取所有密码框。同理还有:radio、:checkbox、:submit、:image、:reset、:button、:file、:hidden。<br /><br /><br />
+
+
+
+    <input type="button" name="name" value="显示效果" id="btn" />
+    <input type="text" name="name" value="第一个文本框" />
+    <textarea rows="30" cols="80">我要做什么就做什么</textarea>
+</body>
+</html>

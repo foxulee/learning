@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#btnDisplay').click(function () {
+                //两种等价的写法
+                $('div p').css('color', 'red');    //'div'里面的'p'
+                $('p', $('div')).css('color', 'red');   //'P'from'div'
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" name="name" value="Display" id="btnDisplay" />
+<div>
+    <p>这是P</p>
+</div>
+</body>
+</html>

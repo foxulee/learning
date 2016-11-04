@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btnShow').click(function () {
+                //每个ul里面的第一个li
+                $('ul li:first-child').css('color','red');
+            });
+        })
+    </script>
+</head>
+<body>
+    子元素过滤器<br />
+    first-child,与first的区别：first只能选取第一个，而:first-child，则能选取每个子元素的第一个元素。<br />
+    $('ul li:first')只返回一个li元素<br />
+    $('ul li:first-child')则为每个父元素ul都返回一个li。<br />
+    :last-child 同理<br />
+    :only-child,匹配当前父元素中只有一个子元素的元素。<br />
+    :nth-child()，对比：eq()来理解，eq()只匹配一个，nth-child()为每个父元素都匹配一个子元素。<br />
+    :nth-child(index) index从1开始<br />
+    :nth-child(even)<br />
+    :nth-child(odd)<br />
+    :nth-child(3n) 选择第3的倍数的元素<br />
+    :nth-child(3n+1)<br />
+    .children()方法，只考虑子元素，不考虑后代元素。<br /><br />
+
+    <br />
+
+
+    <input type="button" name="name" value="显示" id="btnShow" />
+    <ul>
+        <li>一</li>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+    </ul>
+    <hr color="grey" />
+    <ul>
+        <li>你</li>
+        <li>我</li>
+        <li>他</li>
+        <li>她</li>
+        <li>它</li>
+    </ul>
+
+</body>
+</html>

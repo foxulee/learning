@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+
+                $(':radio:checked').each(function (index, ele) {
+                    alert($(ele).val());
+                });
+            });
+            $('#btnselect').click(function () {
+                //对单个radio改变check状态
+                //$(':radio[value=3]').attr('checked', 'checked');
+
+                //同时让多个radio被选中,注意name必须不同，即不同组
+                $(':radio').val(['3','4']);
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="显示" id="btn" />
+    <input type="button" name="name" value="选中" id="btnselect" />
+    <input type="radio" name="name1" value="1" checked="checked" />男  <!--name相同表示在一个组里，check不能复选-->
+    <input type="radio" name="name2" value="2" checked="checked" />女
+    <input type="radio" name="name3" value="3" />保密
+    <input type="radio" name="name4" value="4" />其他
+</body>
+</html>

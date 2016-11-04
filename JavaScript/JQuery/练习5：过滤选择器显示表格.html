@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        var list = [
+	{ id: '1', country: '中国', capital: '北京' },
+	{ id: '2', country: '美国', capital: '华盛顿' },
+	{ id: '3', country: '日本', capital: '东京' },
+	{ id: '4', country: '韩国', capital: '首尔' }
+        ];
+        $(function () {
+            //加表头
+            $('<table></table>').appendTo('body');
+            $('<tr></tr>').appendTo('table');
+            $.each(list[0], function (index, item) {
+                $('<td></td>').text(index).appendTo('tr').css({
+                    'border': '1px',
+                    'font-weight': 'bold',
+                    'color':'red'
+                });
+            });
+
+            //加表格内容
+            for (var i = 0; i < list.length; i++) {
+                var tempColor;  //存储原来的bgcolor
+                $('<tr id="tr' + i + '"></tr>').appendTo('table').hover(function () { //给每一行注册鼠标高亮事件
+                    tempColor = $(this).css('background-color');
+                    $(this).css('background-color', 'yellow');
+                }, function () {
+                    $(this).css('background-color', tempColor);
+                });
+                $.each(list[i], function (index, item) {
+                    $('<td></td>').text(item).appendTo('#tr' + i);
+
+                });
+            }
+
+            //每一行显示不同颜色
+            $('tr:odd').css('background-color', 'grey');
+            //前三行粗体显示
+            $('tr:lt(4)').css('font-weight','bolder');
+        });
+    </script>
+</head>
+<body>
+    根据数据生成表格（数据见备注）<br />
+    使表格中奇偶行显示不同背景色<br />
+    当鼠标指向行时高亮显示<br />
+    当鼠标离开时离开行时恢复到原来颜色<br />
+    设置列表中前三名粗体显示<br /><br /><br />
+
+
+</body>
+</html>

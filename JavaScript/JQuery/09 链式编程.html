@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#btnChange').click(function () {
+                //链式编程，好处简化代码。因为JQ方法最后都return this，所以可以依次不停调用方法。
+                $('p').text('都是P').css('color','red');
+
+            });
+
+        })
+    </script>
+</head>
+<body>
+<input type="button" id="btnChange" value="都是P"/>
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+<p>p4</p>
+<p>p5</p>
+<p>p6</p>
+
+</body>
+</html>

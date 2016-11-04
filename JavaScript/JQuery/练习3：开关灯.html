@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#btnSwitch').toggle(function() {
+                $(this).val('Turn on');
+                    $('body').css('background-color','black');    //body  选择网页内容
+
+                },
+            
+            function() {
+                $(this).val('Turn off');
+                $('body').css('background-color', 'white');
+
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btnSwitch" value="Turn off"/>
+</body>
+</html>

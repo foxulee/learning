@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('div');
+            $('div:first');
+            $('div:eq(2)');    //equals
+            $('div:gt(2)');    //greater than
+            $('div:lt(2)');    //less than 
+            $('div:not(#d1)');   //非
+            $('div:even');       //偶数 0 2 4...
+
+
+        });
+    </script>
+</head>
+<body>
+    用于对选择结果执行进一步过滤 <br />
+    :first、:last、:eq()、:gt()、:lt()、:not(选择器)、:even偶数、:odd奇数<br />
+    说明1：索引下标从0开始<br />
+    说明2：以下标判断奇偶，下标从0开始<br />
+    标题的快速获取<br />
+    普通方法：$('h1,h2,h3...h6')<br />
+    快捷方法：$(':header')<br /><br /><br />
+
+    <div id="d1">
+        <div id="d11"></div>
+        <div id="d12">
+            <div id="d121"></div>
+            <div id="d122"></div>
+        </div>
+        <div id="d13"></div>
+    </div>
+    <div id="d2"></div>
+    <div id="d3">
+        <div id="d31">
+            <div id="d311"></div>
+            <div id="d312"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

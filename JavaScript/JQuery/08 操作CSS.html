@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            //一个一个设置
+            $('#btnShow').css('color', 'red');
+            $('#btnShow').css('background-color', 'blue');
+
+            //同时设置多个
+            $('#btnShow') 
+                .css({
+                    'font-size': '20px',
+                    'position': 'absolute'
+        });
+
+
+        });
+    </script>
+</head>
+<body>
+    样式操作：css()，按照键值对的格式对样式进行设置<br/>
+    如果只设置一个样式，则可直接赋值，如：css('color','red');<br />
+    如果设置多个样式，则使用css({键1：值1，键2：值2})的格式<br />
+    操作后生成的代码，都是对标签的style属性进行设置<br />
+    <br />
+    类操作：addClass,hasClass,removeClass,toggleClass<br />
+也可以使用属性方法进行操作：attr('class','className');<br /><br />
+    
+    <input type="button" id="btnShow" value="display"/>
+
+</body>
+</html>

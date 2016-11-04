@@ -10,7 +10,7 @@
             //通过jquery的选择器得到的数组，才是jquery对象，才可以调用jquery的成员
             //将dom对象转换成jquery对象：$(dom对象)
             $('#btnShow').click(function() {
-                $('p').text('都是P');//隐式迭代
+                $('p').text('都是P');//隐式迭代：自动操作数组中的每个元素
                 $(this).val('abc');
 
             });

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: orange;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#btnShow').click(function () {
+                $('div[id]').css('background-color', 'red');
+                $('div[id=div2]').css('background-color', 'blue');
+                $('input[type=button]').css('color', 'red');
+                $('input[name!=name]').css('background-color', 'green');
+                //必须以name开头
+                //$('input[name^=name]').css('background-color', 'green');
+                //以name结尾
+                //$('input[name$=name]').css('background-color', 'green');
+                //含有name
+                //$('input[name*=name]').css('background-color', 'green');
+
+                //同时有name和value属性
+                //$('input[name][value]').css('background-color', 'green');
+            });
+        });
+    </script>
+</head>
+<body>
+    属性过滤选择器：
+    $("div[id]")选取有id属性的div  <br />
+    $("div[title=test]")选取title属性为“test”的div<br />
+    ，JQuery中没有对getElementsByName进行封装，用$("input[name=abc]")<br />
+    $("div[title!=test]")选取title属性不为“test”的div<br />
+    $(“div[id*=div]”)选取给定的属性是以包含某些值的元素<br />
+    还可以选择开头、结束、包含等，条件还可以复合。（*）<br /><br />
+
+    <input type="button" name="name" value="Show" id="btnShow" /> <br />
+    <input type="text" name="2name1" value="" /> <br />
+    <input type="text" name="3name2" value="" /> <br />
+    <input type="text" name="name3" value="" /> <br />
+    <input type="text" name="name4" value="" /> <br />
+
+    <div id=""></div>
+    <div></div>
+    <div id="div2"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#btn').click(function () {
+                //每个p便签都会用一对font标签包裹上,缺点：每个p标签中都有一对font标签
+                //$('div p').wrap('<font color="blue" size="7" font></font>');
+
+                //将所有的p标签都包裹在一个font标签内
+                //$('div p').wrapAll('<font color="blue" size="7" font></font>');
+
+                //把p标签中的文字内容用一对font标签抱住，但是p标签在外面，缺点：每个p标签中都有一对font标签
+                $('div p').wrapInner('<font color="blue" size="7" font></font>');
+
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="change" id="btn" />
+    <div style="width: 300px; height: 200px; border: 1px solid red">
+        <p>这是p</p>
+        <div>我是最里面的,不是p</div>
+        <p>这也是p</p>
+    </div>
+</body>
+</html>

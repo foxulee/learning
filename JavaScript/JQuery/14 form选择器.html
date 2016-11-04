@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                //form后有空格，表示的是该表单内部的被disabled的元素
+                $('form :disabled').css('background-color', 'red');
+                //form后没有空格，表示的是被disabled的表单
+                //$('form:disabled').css('background-color', 'red');
+                $('input:checked').css('background-color', 'green');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    表单对象选择器（过滤器）： <br />
+    $("#form1 :enabled")选取id为form1的表单内所有启用的元素<br />
+    $("#form1 :disabled")选取id为form1的表单内所有禁用的元素<br />
+    $("input:checked")选取所有选中的元素（Radio、CheckBox）<br />
+    $("select option:selected")选取所有选中的选项元素（下拉列表）<br /><br /><br />
+
+
+    <input type="button" name="name" value="显示效果" id="btn" /><br />
+
+    <div>
+        <input type="checkbox" name="name" value="1" checked="checked" />吃饭
+        <input type="checkbox" name="name" value="2" />睡觉
+        <input type="checkbox" name="name" value="3" />打豆豆
+    </div>
+
+    <form action="/" method="post" id="fm1">
+        <input type="button" name="name" value="按钮1" disabled="disabled" />
+    </form>
+    <form action="" method="get" id="fm2">
+        <input type="button" value="按钮2" />
+    </form>
+</body>
+</html>

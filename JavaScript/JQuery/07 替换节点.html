@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                //两种写法replaceWith replaceAll
+                //$('br').replaceWith('<hr color="yellow" />');
+                $('<hr color="yellow"/>').replaceAll('br');
+            });
+            
+        })
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="替换" id="btn" /> <br/>
+静夜思<br/>
+床前明月光，<br/>
+疑是地上霜。<br/>
+举头望明月，<br/>
+低头思故乡。<br/>
+</body>
+</html>

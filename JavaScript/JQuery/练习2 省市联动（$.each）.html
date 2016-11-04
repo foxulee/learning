@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        var datas = {
+            "北京": ["朝阳", "海淀", "昌平", "丰台"],
+            "山东": ["青岛", "济南", "烟台"],
+            "山西": ["大同", "太原", "运城", "长治"],
+            "河南": ["洛阳", "开封", "郑州", "驻马店"],
+            "河北": ["石家庄", "张家口", "保定"]
+        };
+
+        $(function () {
+            //创建省的select
+            var selectProv = $('<select id="selectProvince"></select>');
+            $('body').append(selectProv);
+            //创建市的select
+            var selectCity = $('<select></select>');
+            selectCity.appendTo('body');
+
+
+            $.each(datas, function (key, value) {
+                $('<option value="' + key + '">' + key + '</option>').appendTo(selectProv);
+            });
+
+            //$.each  相当鱼forin循环
+            //for (var key in datas) {
+            //    $('<option value="'+key+'">' + key + '</option>').appendTo(selectProv);
+            //};
+
+            
+            $.each(datas[$('#selectProvince').val()], function (index, item) {
+               
+                $('<option value=>' + item + '</option>').appendTo(selectCity);     //错误：如果误把</option>写成<option/>则每个选项中间会有空行
+            });
+
+
+
+            selectProv.change(function () {
+                //获得选择的省名称
+                var textProv = $(this).find("option:selected").text();
+                //var textProv = $('#selectProvince').val();   //另一种获得省名称的方法
+                selectCity.empty();
+                
+                $.each(datas[textProv],function(i,n) {
+                    $('<option value="' + n + '">' + n + '</option>').appendTo(selectCity);
+                });
+
+            });
+
+
+          
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

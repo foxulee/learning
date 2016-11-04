@@ -94,10 +94,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="07 包裹元素.html" />
+    <Content Include="07 层级选择器.html" />
+    <Content Include="07 替换节点.html" />
+    <Content Include="08 操作CSS.html" />
+    <Content Include="09 链式编程.html" />
+    <Content Include="10 过滤选择器.html" />
+    <Content Include="11 end%28%29恢复链式.html" />
+    <Content Include="12 相对标签.html" />
+    <Content Include="13 属性选择器.html" />
+    <Content Include="14 form选择器.html" />
+    <Content Include="15 input表单选择器.html" />
+    <Content Include="16 内容过滤器.html" />
+    <Content Include="17 子元素过滤器.html" />
+    <Content Include="19 获取选中的值和设置单选按钮选中.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="练习3：开关灯.html" />
+    <Content Include="练习4：ul li 练习 链式编程.html" />
+    <Content Include="练习5：过滤选择器显示表格.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,11 +128,11 @@
     <Content Include="03 ready event.html" />
     <Content Include="04 合成事件 hover toggle one.html" />
     <Content Include="05 JQ和DOM对象的转换.html" />
-    <Content Include="06 文档操作.html" />
+    <Content Include="06 动态创建元素.html" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="练习1：点谁谁哭.html" />
-    <Content Include="练习2 省市联动.html" />
+    <Content Include="练习2 省市联动（%24.each）.html" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
