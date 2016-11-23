@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="CRUD/tableStyle.css" rel="stylesheet" />
+    <link href="Style/easyui.css" rel="stylesheet" />
+    <link href="Style/icon.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+    <script src="Scripts/jquery.easyui.min.js"></script>
+    <script>
+        $(function () {
+            $("#divDetail").css("display", "none");
+            loadUserInfoList();
+        });
+
+        function loadUserInfoList() {
+            $.getJSON("15 GetUserInfo.ashx", {}, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $("<tr><td>" + data[i]["Id"] + "</td><td>" + data[i]["UserName"] + "</td><td>" + data[i]["Age"] + "</td><td>" + data[i]["Date"] + "</td><td class='detail' id='" + data[i]["Id"] + "'><a href='javascript:void(0)'>Detail</a></td></tr>").appendTo("#userList");
+                }
+                $(".detail").click(function () {
+                    var id = $(this).attr("id");
+                    getUserDetail(id);
+                    $("#divDetail").css("display", "block");
+
+                    //easyUI
+                    $('#divDetail').dialog({
+                        title: 'Detail',
+                        width: 200,
+                        height: 220,
+                        collapsible: true,
+                        minimizable: true,
+                        maximizable: true,
+                        resizable: true,
+                        modal:true,
+                        buttons: [{
+                            text: 'Ok',
+                            iconCls: 'icon-ok',
+                            handler: function () {
+                                //alert('ok');
+                                $('#divDetail').dialog('close');
+                                
+                            }
+                        }
+                        //, {
+                        //    //text: 'Cancel',
+                        //    //handler: function () {
+                        //    //    $('#divDetail').dialog('close');
+                        //    //}
+                        //}
+                        ]
+                    });
+
+                });
+
+            });
+
+        }
+
+        function getUserDetail(id) {
+            $.getJSON("15 GetUserDetail.ashx", { "id": id }, function (data) {
+                $("#txtId").text(data[0].Id);
+                $("#txtName").text(data[0].UserName);
+                $("#txtAge").text(data[0].Age);
+                $("#txtDate").text(data[0].Date);
+            });
+        }
+    </script>
+</head>
+<body>
+    <table id="userList">
+        <tr><th>ID</th><th>User Name</th><th>Age</th><th>Date</th><th>Detail</th></tr>
+
+    </table>
+    <div id="divDetail">
+        <table>
+            <tr><td>Id</td><td id="txtId"></td></tr>
+            <tr><td>User Name</td><td id="txtName"></td></tr>
+            <tr><td>Age</td><td id="txtAge"></td></tr>
+            <tr><td>Date</td><td id="txtDate"></td></tr>
+        </table>
+    </div>
+</body>
+</html>

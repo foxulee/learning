@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="tableStyle.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('a:contains("Delete")').click(function() {
+                if (window.confirm("Are you sure to delete this user?")) {     //弹出警告框提示是否删除用户
+                    return true;
+                } else {
+                    return false;                //此处return false的意义是：点击超链接后不跳转到页面（DeleteUserInfo.ashx）
+                }
+                
+            });
+        });
+    </script>
+</head>
+<body>
+<a href="AddUserInfo.html">Add User</a>
+<table>
+    <tr><th>ID</th><th>Name</th><th>Password</th><th>Age</th><th>Date</th><th>More...</th><th>Delete</th><th>Edit</th></tr>
+    $tbody
+
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        $(function () {
+            var time = 5;
+            var timer = setInterval(function () {
+                $('span').text(time);
+                time--;
+                if (time < 0) {
+
+                    clearInterval(timer);
+                    //跳转页面  location.href=
+                    window.location.href = "UserInfoList.ashx";
+                }
+            }, 1000);
+        })
+    </script>
+</head>
+<body>
+服务器忙啊啊啊！
+    <span style="font-size: 20px; color: red; font-weight: bolder">5</span>秒后自动跳转到<a href="UserInfoList.ashx">列表页面</a>。
+</body>
+</html>

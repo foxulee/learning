@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+    <meta charset="utf-8" />
+    <script src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <form action="ProcessEdit.ashx" method="post">
+        User Name: <input type="text" name="txtName" id="txtName" value="@UserName"/><br />
+        Password: <input type="password" name="txtPwd" value="@UserPwd"/><br />
+        Age: <input type="text" name="txtAge" value="@UserAge"/><br/>
+        <input type="hidden" name="txtId" value="@UserId" />    <!--隐藏域用于传递UserId-->
+        <input type="submit" value="Update User" />
+    </form>
+</body>
+</html>

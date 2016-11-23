@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        //$(function() {
+        //    $('a').click(function() {
+        //        $('img').src = "06 验证码.ashx";
+        //    });
+        //});
+
+        onload = function() {
+            var validate = document.getElementById("validate");
+            validate.onclick = function () {
+                //加上参数，告诉browser每次请求的地址都不同，browser会自动刷新
+                document.getElementById("img").src = "06 验证码.ashx?r="+new Date().getMilliseconds();
+            };
+        };
+    </script>
+</head>
+<body>
+<form action="Login.html" method="post">
+    User Name: <input type="text" name="txtUserName" value=""/><br/>
+    Password: <input type="text" name="txtPwd" value=""/><br/>
+    Code: <input type="text" value=""/><img src="06 验证码.ashx" id="img"/><a href="javascript:void(0)" id="validate">看不清？换一张</a><br/>
+    <input type="submit"  value="Login" />
+</form>
+</body>
+</html>

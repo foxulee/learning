@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    
+</head>
+<body>
+<!--enctype="application/x-www-form-urlencoded"把表单的数据组织成:fileup=... (默认的)-->
+    <!--enctype="multipart/form-data":将上传文件的内容发送到服务端-->
+<form action="04 UploadFile.ashx" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileup"/>
+    <input type="text" name="txtName" enctype="application/x-www-form-urlencoded"/> <!--默认不写enctype-->
+    <input type="submit" value="Upload"/>
+</form>
+</body>
+</html>
