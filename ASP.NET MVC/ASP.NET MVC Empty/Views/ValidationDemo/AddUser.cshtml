@@ -1,0 +1,44 @@
+﻿@model ASP.NET_MVC_Empty.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddUser</title>
+    <script src="~/scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <div>
+        校验：需要引用3个脚本<br/>
+        在Model中创建类型，用于在View中作为强类型页面的类型<br />
+        .NET 框架中System.ComponentModel.DataAnnotations命名空间包括了众多可用的内置验证特性，用于修饰属性，常用的四个如下：<br />
+        [Required]<br />
+        [StringLength]<br />
+        [Range]<br />
+        [RegularExpression]<br />
+        属性ErrorMessage：指定错误提示信息<br />
+
+        @using (Html.BeginForm("AddUser", "ValidationDemo", FormMethod.Post))
+        {
+            <span>Id:</span>@Html.TextBoxFor(u => u.Id)
+            <span style="color:red">@Html.ValidationMessageFor(u => u.Id)</span>
+            <br />
+            <span>Name:</span>@Html.TextBoxFor(u => u.Name)
+            <span style="color:red">@Html.ValidationMessageFor(u => u.Name)</span>
+            <br />
+            <span>Age:</span>@Html.TextBoxFor(u => u.Age)
+            @Html.ValidationMessageFor(u => u.Age)
+            <br />
+            <span>Password</span>@Html.PasswordFor(u => u.Password)
+            <br />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>

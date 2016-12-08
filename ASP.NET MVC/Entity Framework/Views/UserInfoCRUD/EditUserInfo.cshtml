@@ -1,0 +1,25 @@
+﻿@model Entity_Framework.Models.UserInfo
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>EditUserInfo</title>
+    </head>
+    <body>
+        <div>
+            @using (@Html.BeginForm("AddUser", "UserInfoCRUD", FormMethod.Post))
+            {
+                <span>Id:</span>@Model.UserId@Html.HiddenFor(u=>u.UserId)<br/>
+                <span>Name: </span> @Html.TextBoxFor(u => u.UserName)<br />
+                <span>Age: </span>@Html.TextBoxFor(u => u.UserAge)<br />
+                <span>Password: </span>@Html.TextBoxFor(u => u.UserPwd)<br />
+                <input type="submit" value="Edit" />
+            }
+        </div>
+    </body>
+</html>

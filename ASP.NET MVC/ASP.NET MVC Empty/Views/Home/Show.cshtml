@@ -1,0 +1,76 @@
+﻿@using NET_MVC_Empty.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+</head>
+<body>
+    <div>
+        <h1>Show</h1> <hr />
+
+        强大的@@：表示使用C#代码，相当于aspx中的<%%>
+
+        @*Razor的作用域
+            大括号里面的就是表示作用域的范围，用形如@{code}来写一段代码块。在作用域(代码块)中输出也是用@符号的。*@
+
+        @{
+            int a1 = 10;
+            string str1 = "<h1>123</hr>";
+            @a1;
+            Response.Write(a1 + 1);    //结果输出显示到body开始
+            Response.Write(str1);
+        }
+
+        <br />
+        @str1     @*接着显示*@
+        <br />
+
+        @a1 <br> 123
+        <hr />
+
+        用Razor和html代码混合编写
+        @*在Razor中写html代码和html代码中写Razor语句都是可以的，并且还有智能提示。
+
+            a.在作用域内如果是以html标签开始则视为文本输出
+
+            b.如果要输出@，则使用@@
+
+            c.如果要输出非html标签和非Razor语句的代码，则用@:，他的作用是相当于在处于html下面编写一样了，如在@：后面可以加上@就是表示Razor语句的变量*@
+        @for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <span>123</span>
+                if (i % 3 == 0)
+                {
+                    @i
+                }
+            }
+        }
+
+        @{
+
+            var str = "abc";
+            //下面会输出：this is a mail：dxl0321@qq.com, this is var: abc,this is mail@str,this is @；
+            @: this is a mail：dxl0321@@qq.com, this is var: @str,this is  mail@str,this is @@；
+    //下面输出abc
+    @str
+
+        }
+
+        @{
+            Person p1 = new Person();
+            p1.Age = 10;
+        }
+               
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@using Entity_Framework.Models
+@*此处只能是IQueryable，不能是List*@
+@model IQueryable<Entity_Framework.Models.UserInfo>   
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>编号</th><th>姓名</th><th>年龄</th>
+        </tr>
+        @foreach (UserInfo userInfo in Model)
+        {
+            <tr>
+                <td>@userInfo.UserId</td>
+                <td>@userInfo.UserName</td>
+                <td>@userInfo.UserAge</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

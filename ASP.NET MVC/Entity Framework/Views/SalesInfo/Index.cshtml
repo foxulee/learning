@@ -1,0 +1,30 @@
+﻿@using Entity_Framework.Models
+@model IQueryable<Entity_Framework.Models.SalesInfoViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr><th>TerritoryId</th><th>BussinessEntityId</th><th>Name</th><th>Group</th></tr>
+        @foreach (SalesInfoViewModel set in Model)
+        {
+            <tr>
+                <td>@set.TerritoryId</td>
+                <td>@set.BussinessEntityId</td>
+                <td>@set.Name</td>
+                <td>@set.Group</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

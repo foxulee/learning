@@ -1,0 +1,35 @@
+﻿@using Models
+@model List<Models.UserInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table style="border: 1px">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+            </tr>
+            <tbody>
+                @{
+                    foreach (UserInfo userInfo in Model)
+                    {
+                        <tr>
+                            <td>@userInfo.Id</td>
+                            <td>@userInfo.Name</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

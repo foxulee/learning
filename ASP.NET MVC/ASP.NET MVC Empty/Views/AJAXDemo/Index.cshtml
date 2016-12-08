@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        $(function() {
+            $("#equals1").click(function() {
+                $.post("@Url.Action("CalcAdd","AJAXDemo")", $("#form1").serialize(), function(data) {
+                    $("#result1").val(data);
+                });
+            });
+        });
+
+        function Success(obj) {
+            $("#result2").val(obj.Sum);
+        }
+    </script>
+</head>
+<body>
+<div>
+    1. JQeury方式实现AJAX：<br/>
+    <form id="form1">
+        <input type="text" name="num1" value=""/>+
+        <input type="text" name="num2" value=""/>
+        <input type="button" id="equals1" value="="/>
+        <input type="text" name="result" id="result1"/>
+    </form>
+    <hr/>
+
+    2. 使用MVC的AjaxHelper  需要引用脚本jquery.unobtrusive-ajax.min.js
+    @using (Ajax.BeginForm("CalcAdd1","AJAXDemo",new AjaxOptions()
+    {
+        OnSuccess = "Success"
+    }))
+    {
+        <input type="text" name="num1"/><span>+</span>
+        <input type="text" name="num2"/>
+        <input type="submit" value="="/>
+        <input type="text" id="result2" />
+        }
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@using Entity_Framework.Models
+@model IQueryable<Entity_Framework.Models.UserInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Add User", "AddUser", "UserInfoCRUD")<hr />
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var userinfo in Model)
+            {
+                <tr>
+                    <td>@userinfo.UserId</td>
+                    <td>@userinfo.UserName</td>
+                    <td>@userinfo.UserAge</td>
+                    <td>@userinfo.UserPwd</td>
+                    <td>@Html.ActionLink("Edit", "EditUserInfo", "UserInfoCRUD", new RouteValueDictionary(new { id = @userinfo.UserId }),null)</td>  
+                    <td>@Html.ActionLink("Delete", "DeleteUserInfo", "UserInfoCRUD", new RouteValueDictionary(new { id = @userinfo.UserId }),null)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿@model ASP.NET_MVC_Empty.Models.Person    
+@{
+    Layout = null;
+}
+
+@*指定页面强类型对象，每个页面只能有一个*@
+@*如果要使用两个或者多个类怎么办？就手动手动封装一个类，将其属性指定为要使用的类。*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HtmlTest</title>
+</head>
+<body>
+    <div>
+         HtmlHelper是为了方便View的开发而产生的: <br />
+        <a href="/home/index">
+            普通链接,缺点：当路由规则改变时，几乎所有的超连接都要更改
+        </a> <br />
+        <a href="@Url.Action("Index", "Home")">借助Url根据路由规则生成链接地址，缺点：不能编译时排错，只有运行时才知道是否正确</a><br />
+        @Html.ActionLink("专门用于MVC的链接方式：Html.Action(“Home”,“Index”)，会根据路由规则生成a标记，并且在运行时可以进行有效性检查，不需要用户点击链接后才知道链接出错了", "Index", "Home")
+        <hr/>
+
+      
+
+        @Html.Raw(1);  <!--输出-->
+        <hr />
+
+        @{
+            string temp1 = "<b>123</b>";
+        }
+        @Html.Encode(temp1)   <!--进行Html编码-->
+        <hr />
+
+        利用HtmlHelper快速完成表单布局：<br />
+        @*表单方式一：using(Html.BeginForm(actionName,controllerName)){…}
+            表单方式二：
+            @Html.BeginForm(actionName, controllerName)
+            …
+            @{Html.EndForm();}*@
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+            @Html.TextBox("test1")    //自动将ViewData中的键装配给TextBox,value值为ViewData的值
+
+            @Html.DropDownList("dropDownList")    //创建下拉列表dropDownList是ViewData的键，由controller传值过来
+
+            <input type="button" />
+            <input type="submit" />
+        }
+        @ViewData["test2"]
+        @ViewBag.test1
+        <hr />
+
+        @*要求使用强类型页面
+            强类型的优点：可以在编译阶段进行代码检查.@model 类型，写在页面的最上面*@
+
+        页面强类型表单：<br />
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            @Html.TextBoxFor(person => person.Age)      //使用Html.**For(model=>model.Property)的格式调用，参数为一个lambda表达式，可以根据对象的属性快速生成表单控件 
+
+        }
+        @ViewData.Model.Age<br/>
+        @ViewData.Model.QQ<br/>
+
+    </div>
+</body>
+</html>

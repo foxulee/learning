@@ -1,0 +1,43 @@
+﻿@model ASP.NET_MVC_Empty.Models.Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script>
+        onload=function() {
+            document.getElementById("aGet").onclick=function() {
+                var id = document.getElementById("txtGet").value;
+                this.href = '@Url.Action("DataExchange","ControllerDemo")?id=' + id;
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    
+    <input type="text" value="" id="txtGet"/>
+    <a id="aGet" href="@Url.Action("DataExchange","ControllerDemo")?id=">Get传值</a>
+    <hr/>
+    @using (Html.BeginForm("DataExchange", "ControllerDemo",FormMethod.Post))
+    {
+        @Html.TextBox("id")
+        <input type="submit" value="Post传值"/>
+    }
+    <hr/>
+    <div>
+        @using (Html.BeginForm("GetPerson","ControllerDemo",FormMethod.Post))
+        {
+            <span>年龄: </span> @Html.TextBoxFor(p=>p.Age)
+            <span>QQ: </span>@Html.TextBoxFor(p=>p.QQ)
+            <input type="submit" value="Post传递对象"/>
+        }
+    </div>
+</div>
+</body>
+</html>
